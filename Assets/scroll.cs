@@ -5,7 +5,11 @@ using UnityEngine;
 public class scroll : MonoBehaviour
 {
     // Start is called before the first frame update
-    public int speed = 1;
+    public float speed = 1;
+    public float maxLeft;
+    public float maxRight;
+
+
 
     void Start()
     {
@@ -15,8 +19,8 @@ public class scroll : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.x < -21) {
-            transform.position = new Vector3(21, -3.5f, 0);
+        if (transform.position.x < maxLeft) {
+            transform.position = new Vector3(maxRight, transform.position.y, 0);
         }
 
 
